@@ -16,6 +16,25 @@ def clear_data():
         if sure.lower() == 'y':
             p_inv = []
             p_lvl = "1"
+            p_money = 100
+            p_gems = 0
 
-            os.remove("RPG-DATA/p_inv.json")
-            os.remove("RPG-DATA/p_lvl.json")
+            try:
+                os.remove("RPG-DATA/p_inv.json")
+            except OSError:
+                print("No inventory data found.")
+            
+            try:
+                os.remove("RPG-DATA/p_lvl.json")
+            except OSError:
+                print("No player level data found.")
+            
+            try:
+                os.remove("RPG-DATA/p_money.json")
+            except OSError:
+                print("No player money data found.")
+            
+            try:
+                os.remove("RPG-DATA/p_gems.json")
+            except OSError:
+                print("No player gems found.")

@@ -2,13 +2,13 @@ import getpass
 import json
 import os
 
+account = {}
+
 def UPLOAD_DATA(uname, upass):
     os.makedirs("RPG-DATA", exist_ok=True)
 
-    account = {
-        'username' : uname,
-        'userpassword' : upass
-    }
+    account['username'] = uname
+    account['userpassword'] = upass
 
     with open("RPG-DATA/account.rpgdt", "w") as file:
         json.dump(account, file)
@@ -21,6 +21,7 @@ def CREATE_AN_ACCOUNT(caaq):
         UPLOAD_DATA(username_to_use, password_to_use)
     else:
         print("Thanks for trying out our game!")
+        exit()
 
 def HAS_AN_ACCOUNT():
     has_already_created_account = input("Do you have an existing account? [y or n]: ")
