@@ -8,6 +8,7 @@ def save_data(p):
     p_name = p.PLAYERNAME
     p_location = p.PLAYERLOCATION
     p_money = p.PLAYERMONEY
+    p_gems = p.PLAYERGEMS
 
     with open("RPG-DATA/p_inv.json", 'w') as file:
         json.dump(p_inv, file)
@@ -23,6 +24,9 @@ def save_data(p):
 
     with open("RPG-DATA/p_money.json", 'w') as file:
         json.dump(p_money, file)
+
+    with open("RPG-DATA/p_gems.json", 'w') as file:
+        json.dump(p_gems, file)
 
     with open('RPG-DATA/save.json', 'w') as file:
         json.dump("false", file )
